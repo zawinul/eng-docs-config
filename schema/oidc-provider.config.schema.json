@@ -1,0 +1,37 @@
+{
+	"title": "JSON schema for coffeelint.json files",
+	"$schema": "http://json-schema.org/draft-04/schema#",
+
+	"type":"object",
+	"properties": {
+		"clients": {
+			"description": "elenco dei client da cui ci aspettiamo l'accesso e a cui ritorneremo via callback",
+			"type":"array",
+			"items": {  "$ref": "#/definitions/client"  }
+		},
+		"claims": {
+			"type":"object",
+			"additionalProperties": {
+				"type": "array",
+				"items": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"definitions": {
+		"client": {
+			"type": "object",
+			"properties": {
+				"client_id": { "type": "string" },
+				"client_secret": { "type": "string" },
+				"redirect_uris": {
+					"description": "elenco di indirizzi accettati di callback",
+					"type" : "array",
+					"items": {	"type": "string" }
+				} 
+			}
+		}
+	}
+
+}

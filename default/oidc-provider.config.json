@@ -1,0 +1,82 @@
+{
+	"$schema":"../schema/oidc-provider.config.schema.json",
+	"title":"dati di partenza privati letti da oidc-provider",
+	
+	"clients": [
+		{
+			"client_id": "foo",
+			"client_secret": "bar",
+			"redirect_uris": [
+				"https://oidc-consumer:5043/callback",
+				"https://oidc-consumer:5043/callback-after-auth"
+			]
+		},
+		{
+			"client_id": "foo2",
+			"client_secret": "bar2",
+			"redirect_uris": [
+				"https://oidc-consumer:5043/callback",
+				"https://oidc-consumer:5043/callback-after-auth"
+			]
+		},
+		{
+			"client_id": "r3",
+			"client_secret": "r3-bar",
+			"redirect_uris": [
+				"https://eng-static:91/oidc/cb.html"
+			]
+		},
+		{
+			"client_id": "engapp",
+			"client_secret": "engapp-pwd123",
+			"audience": "eng-doc-domain",
+			"redirect_uris": [
+				"https://127.0.0.1:91/oidc/cb.html",
+				"https://engapp:91/oidc/cb.html"
+			]
+		},
+		{
+			"client_id": "camunda",
+			"client_secret": "camundasecret",
+			"redirect_uris": [
+				"https://127.0.0.1:8080/oidc-callback"
+			]
+		}	],
+		"claims": {
+			"openid": [
+				"sub"
+			],
+			"email": [
+				"email",
+				"email_verified"
+			],
+			"profile": [
+				"organigramma",
+				"abilitazioni",
+				"personali"
+			],
+			"dati_applicativi": [
+				"organigramma",
+				"abilitazioni"
+			],
+			"altro": [
+				"altro",
+				"altro_ancora"
+			],
+			"workflow":[
+				"camunda_id"
+			],
+			"servizio1": [
+				"messaggio"
+			],
+			"servizio2": [],
+			"servizio3": [],
+			"servizio4": [],
+			"servizio5": [],
+			"servizio6": [],
+			"servizio7": [],
+			"servizio8": [],
+			"servizio9": [],
+			"servizio10": []
+			}
+}
